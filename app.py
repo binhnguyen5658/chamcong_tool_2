@@ -31,8 +31,8 @@ if uploaded_file:
     # --- process and show preview section ---
     df_clean = transform_file(df)
 
-    st.subheader('Preview File')
-    st.dataframe(df_clean)
+    st.subheader('Preview 10 rows in result file')
+    st.dataframe(df_clean.head(10))
 
     # --- Download file ---
 
