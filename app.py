@@ -14,6 +14,14 @@ def generate_excel_download_link(df):
     return st.markdown(href, unsafe_allow_html=True)
 # ---------------------------------------
 
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 st.set_page_config(page_title='Chấm Công Tool', layout='centered')
 
