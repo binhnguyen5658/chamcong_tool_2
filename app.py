@@ -21,9 +21,10 @@ hide_st_style = """
             header {visibility: hidden;}
             </style>
             """
-st.markdown(hide_st_style, unsafe_allow_html=True)
 
 st.set_page_config(page_title='Chấm Công Tool', layout='centered')
+
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 st.title('Tool xử lý file chấm công')
 
