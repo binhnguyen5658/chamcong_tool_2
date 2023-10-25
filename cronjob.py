@@ -1,13 +1,17 @@
 # import necessary modules
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 import chromedriver_autoinstaller
 from time import sleep
 
 chromedriver_autoinstaller.install()
 
-# create a new instance of the Firefox driver
-driver = webdriver.Chrome()
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+
+# create a new instance of the Chrome driver
+driver = webdriver.Chrome(options=chrome_options)
 driver.implicitly_wait(10)
 
 # navigate to the login page
