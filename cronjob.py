@@ -9,11 +9,9 @@ driver.implicitly_wait(10)
 
 # navigate to the login page
 driver.get("https://nncchamcongtool.streamlit.app")
-# driver.get("https://share.streamlit.io/")
 
 try:
     element = driver.find_element(By.XPATH, '//button[contains(text(),"app back up")]')
-    # element = driver.find_element(By.XPATH, '//button[contains(text(),"with Google")]')
 except:
     print('still awake')
     pass
