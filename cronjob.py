@@ -1,7 +1,10 @@
 # import necessary modules
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import chromedriver_autoinstaller
 from time import sleep
+
+chromedriver_autoinstaller.install()
 
 # create a new instance of the Firefox driver
 driver = webdriver.Chrome()
