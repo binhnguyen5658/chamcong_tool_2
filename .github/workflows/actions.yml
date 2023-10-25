@@ -1,4 +1,4 @@
-name: run cronjob.py
+name: awake cham_cong_tool job
 
 on: 
   schedule:
