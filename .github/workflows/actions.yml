@@ -17,9 +17,6 @@ jobs:
         with:
           python-version: '3.9' # install the python version needed
 
-      # - uses: browser-actions/setup-chrome@latest
-      # - run: chrome --version
-
       - name: Removing previous chrome instances on runner 
         run: sudo apt purge google-chrome-stable  
         
@@ -30,17 +27,3 @@ jobs:
 
       - name: execute py script # run cronjob.py
         run: python cronjob.py
-
-      # - name: commit files
-      #   run: |
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git add -A
-      #     git diff-index --quiet HEAD || (git commit -a -m "updated files" --allow-empty)
-
-      # - name: push changes
-      #   uses: ad-m/github-push-action@v0.6.0
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     branch: main 
-        
