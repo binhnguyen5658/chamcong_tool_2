@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from time import sleep
 
 # create a new instance of the Firefox driver
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 driver.implicitly_wait(10)
 
 # navigate to the login page
