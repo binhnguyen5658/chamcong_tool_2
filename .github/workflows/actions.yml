@@ -2,7 +2,7 @@ name: awake cham_cong_tool job
 
 on: 
   schedule:
-    - cron: '0 1 * * 1-5' # At 08:00 on every day-of-week from Monday through Friday
+    - cron: '0 1 * * 1-5' # At 01:00 UTC (= 08:00 VN time), 1 on every day-of-week from Monday through Friday
   workflow_dispatch:
 
 jobs:
