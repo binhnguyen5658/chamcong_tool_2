@@ -22,7 +22,7 @@ st.subheader('Upload File')
 
 uploaded_file = st.file_uploader(label='Choose file', type='xlsx')
 
-if uploaded_file:
+if st.button('Process file'):
     st.markdown('---')
     # --- input section ---
     df =  pd.read_excel(uploaded_file, engine='openpyxl',header=None)
