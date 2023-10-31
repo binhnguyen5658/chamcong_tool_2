@@ -12,19 +12,9 @@ def generate_excel_download_link(df):
     b64 = base64.b64encode(towrite.read()).decode()
     href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="checkin_data.xlsx">Checkin data</a>'
     return st.markdown(href, unsafe_allow_html=True)
+
 # ---------------------------------------
-
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-
 st.set_page_config(page_title='Chấm Công Tool', layout='centered')
-
-st.markdown(hide_st_style, unsafe_allow_html=True)
 
 st.title('Tool xử lý file chấm công')
 
@@ -64,8 +54,14 @@ if uploaded_file:
     generate_excel_download_link(df_clean)
 
 
-
-
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 
 
