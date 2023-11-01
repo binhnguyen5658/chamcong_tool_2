@@ -22,7 +22,9 @@ st.subheader('Upload File')
 
 uploaded_file = st.file_uploader(label='Choose file', type='xlsx')
 
-if st.button('Process file'):
+process_button = st.button('Process file')
+
+if process_button and uploaded_file:
     st.markdown('---')
     # --- input section ---
     df =  pd.read_excel(uploaded_file, engine='openpyxl',header=None)
@@ -34,25 +36,11 @@ if st.button('Process file'):
     st.dataframe(df_clean.head(10))
 
     # --- Download file ---
-
     st.subheader('Download File')
-
-    # @st.cache
-    # def convert_df(df):
-    #     # IMPORTANT: Cache the conversion to prevent computation on every rerun
-    #     return df.to_csv(index=False)
-
-    # file = convert_df(df_clean)
-
-    # button = st.download_button(
-    #     label='Download file',
-    #     data=file,
-    #     file_name='Checkin_data.csv',
-    #     mime='text/csv',
-    # )
-
     generate_excel_download_link(df_clean)
-
+    
+elif process_button and uploaded_file == None:
+    st.write('Please upload the file to process')
 
 hide_st_style = """
             <style>
