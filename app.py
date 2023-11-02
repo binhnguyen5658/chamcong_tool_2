@@ -40,7 +40,8 @@ if process_button and uploaded_file:
     generate_excel_download_link(df_clean)
     
 elif process_button and uploaded_file == None:
-    st.error('There is no file to process')
+    st.warning('There is no file to process')
+    st.stop()
 
 hide_st_style = """
             <style>
